@@ -5,7 +5,7 @@ SG_ID="sg-0e2dffc85a2dd9b4b"
 
 for instance in "$@"   # take dynamic inputs
 do 
-    echo "Creating instance: $instance"
+    #echo "Creating instance: $instance"
 
     INSTANCE_ID=$(aws ec2 run-instances \
         --image-id $AMI_ID \
@@ -15,7 +15,7 @@ do
         --query 'Instances[0].InstanceId' \
         --output text)
 
-    echo "Instance ID: $INSTANCE_ID"
+    #echo "Instance ID: $INSTANCE_ID"
 
     # wait until instance is running
     aws ec2 wait instance-running --instance-ids $INSTANCE_ID
@@ -33,5 +33,5 @@ do
     fi 
 
     echo "$instance: $IP" 
-    echo "-----------------------------"
+    #echo "-----------------------------"
 done
