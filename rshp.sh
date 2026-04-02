@@ -3,6 +3,7 @@
 AMI_ID="ami-0220d79f3f480ecf5" 
 SG_ID="sg-0e2dffc85a2dd9b4b" 
 
+
 for instance in "$@"   # take dynamic inputs
 do 
     #echo "Creating instance: $instance"
